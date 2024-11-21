@@ -1,8 +1,10 @@
-# User Notification Preferences API
+# User Notification Preferences API 
 
 ## 📋 Overview
-
 A robust, serverless Nest.js API for managing user notification preferences and sending notifications. The system provides comprehensive functionality for user preference management, notification tracking, and delivery simulation.
+
+## 🌐 Deployment
+- **Live API Documentation**: https://user-notification-preferences-api.onrender.com/api-docs
 
 ## ✨ Features
 
@@ -17,7 +19,6 @@ A robust, serverless Nest.js API for managing user notification preferences and 
 - Basic notification statistics tracking
 
 ## 🚀 Tech Stack
-
 - **Framework**: Nest.js
 - **Language**: TypeScript
 - **Database**: MongoDB (Mongoose)
@@ -26,7 +27,6 @@ A robust, serverless Nest.js API for managing user notification preferences and 
 - **Documentation**: Swagger OpenAPI
 
 ## 🔧 Prerequisites
-
 - Node.js (v16+ recommended)
 - MongoDB
 - npm or yarn
@@ -53,10 +53,9 @@ cp .env.example .env
 ```
 
 ## 🔒 Environment Configuration
-
 Create a `.env` file with the following key configurations:
 
-```properties
+```
 # MongoDB Connection
 MONGODB_URI=mongodb://localhost:27017/notification_preferences
 
@@ -78,8 +77,8 @@ npm run start:prod
 ```
 
 ## 📄 API Documentation
-
 - **Swagger UI**: `http://localhost:3000/api-docs`
+- **Live Deployment Docs**: https://user-notification-preferences-api.onrender.com/api-docs
 
 ## 🧪 Testing
 
@@ -112,13 +111,11 @@ npm run test:cov
 - `GET /api/notifications/stats`: Get notification statistics
 
 ## 📊 Monitoring
-
 - Basic request logging
 - Error tracking
 - Performance interceptors
 
 ## 🤝 Contributing
-
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
@@ -126,21 +123,16 @@ npm run test:cov
 5. Create a Pull Request
 
 ## 🐛 Known Issues & Limitations
-
 - Current implementation is a simulation of notification sending
 - Rate limiting might need tuning based on production traffic
 - Additional authentication mechanisms can be implemented
 
 ## 📚 Additional Resources
-
-- [Nest.js Documentation](https://nestjs.com/)
+- [Nest.js Documentation](https://docs.nestjs.com/)
 - [Mongoose ODM](https://mongoosejs.com/)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 
 ## 🚨 Disclaimer
-
 This is a demonstration project and should be thoroughly reviewed and adapted for production use.
-
----
 
 **🌟 Happy Coding!**
