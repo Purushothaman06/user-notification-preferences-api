@@ -1,0 +1,211 @@
+{
+    "info": {
+        "name": "Notification Preferences API",
+        "_postman_id": "12345-67890-abcdef",
+        "description": "API for managing user notification preferences and sending notifications.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "User Preferences",
+            "item": [
+                {
+                    "name": "Create User Preferences",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"userId\": \"user123\",\n  \"email\": \"user@example.com\",\n  \"preferences\": {\n    \"marketing\": true,\n    \"newsletter\": false,\n    \"updates\": true,\n    \"frequency\": \"weekly\",\n    \"channels\": {\n      \"email\": true,\n      \"sms\": false,\n      \"push\": true\n    }\n  },\n  \"timezone\": \"America/New_York\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/preferences",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "preferences"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get User Preferences",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3000/api/preferences/:userId",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "preferences",
+                                ":userId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "userId",
+                                    "value": "user123"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update User Preferences",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"preferences\": {\n    \"marketing\": false,\n    \"newsletter\": true\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/preferences/:userId",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "preferences",
+                                ":userId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "userId",
+                                    "value": "user123"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete User Preferences",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3000/api/preferences/:userId",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "preferences",
+                                ":userId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "userId",
+                                    "value": "user123"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Notifications",
+            "item": [
+                {
+                    "name": "Send Notification",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"userId\": \"user123\",\n  \"type\": \"marketing\",\n  \"channel\": \"email\",\n  \"content\": {\n    \"subject\": \"Special Offer\",\n    \"body\": \"Check out our latest deals!\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/api/notifications/send",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "notifications",
+                                "send"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Notification Logs",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3000/api/notifications/:userId/logs",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "notifications",
+                                ":userId",
+                                "logs"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "userId",
+                                    "value": "user123"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Notification Stats",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:3000/api/notifications/stats",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "api",
+                                "notifications",
+                                "stats"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
